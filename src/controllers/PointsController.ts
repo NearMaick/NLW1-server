@@ -2,13 +2,13 @@ import { Request, Response } from 'express';
 import knex from '../database/connection';
 
 class PointsController {
-  async index (request: Request, response: Response) {
+  async index(request: Request, response: Response): Promise<unknown> {
     const { city, uf, items } = request.query;
-// parei aqui: 1:49'30
+    // parei aqui: 1:49'30
     return response.json({ city, uf, items });
   }
 
-  async show (request: Request, response: Response) {
+  async show(request: Request, response: Response): Promise<unknown> {
     const { id } = request.params;
 
     const point = await knex('points').where('id', id).first();
@@ -22,10 +22,10 @@ class PointsController {
       .where('point_items.point_id', id)
       .select('items.title');
 
-    return response.json({point, items});
+    return response.json({ point, items });
   }
 
-  async create (request: Request, response: Response) {
+  async create(request: Request, response: Response): Promise<unknown> {
     const {
       name,
       email,
@@ -34,9 +34,9 @@ class PointsController {
       longitude,
       city,
       uf,
-      items
+      items,
     } = request.body;
-  
+
     // const trx = await knex.transaction();
 
     const point = {
@@ -47,27 +47,27 @@ class PointsController {
       latitude,
       longitude,
       city,
-      uf
-    }
-  
-    const insertedIds =  await knex('points').insert(point);
-  
+      uf,
+    };
+
+    const insertedIds = await knex('points').insert(point);
+
     const point_id = insertedIds[0];
-  
+
     const pointItems = items.map((item_id: number) => {
       return {
         item_id,
         point_id,
-      }
+      };
     });
-  
+
     await knex('point_items').insert(pointItems);
-  
+
     return response.json({
-      id: point_id, 
+      id: point_id,
       ...point,
-     });
-  }  
+    });
+  }
 }
 
 export default PointsController;
