@@ -2,6 +2,12 @@ import { Request, Response } from 'express';
 import knex from '../database/connection';
 
 class PointsController {
+  async index (request: Request, response: Response) {
+    const { city, uf, items } = request.query;
+// parei aqui: 1:49'30
+    return response.json({ city, uf, items });
+  }
+
   async show (request: Request, response: Response) {
     const { id } = request.params;
 

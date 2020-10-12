@@ -7,11 +7,10 @@ const routes = express.Router();
 const pointsController = new PointsController();
 const itemsController = new ItemsController();
 
-routes.get('/items', );
+routes.get('/items', itemsController.index);
 
 routes.post('/points', pointsController.create);
+routes.get('/points/', pointsController.index);
 routes.get('/points/:id', pointsController.show);
-
-routes.get('/items', itemsController.index);
 
 export default routes;

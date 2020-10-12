@@ -1,0 +1,126 @@
+{
+  // Define o tema do VSCode
+  "workbench.colorTheme": "Omni",
+
+   // Aumenta a fonte do terminal
+   "terminal.integrated.fontSize": 14,
+
+   // Define o tema dos ícones na sidebar
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile",
+
+  // Configura tamanho e família da fonte
+  "editor.tabSize": 2,
+  "editor.lineHeight": 24,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,    
+
+  // Aplica um sinal visual na esquerda da linha selecionada
+  "workbench.editor.labelFormat": "short",
+  "editor.renderLineHighlight": "gutter",
+  "extensions.ignoreRecommendations": false,
+  "explorer.compactFolders": false,
+
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+
+  "breadcrumbs.enabled": true,
+  "editor.parameterHints.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+
+  // Configura o teminal interno do VSCode:
+  "terminal.integrated.shell.linux": "/bin/zsh",
+
+  // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
+  "editor.rulers": [80, 120],
+  "editor.formatOnSave": false,
+
+  "[javasrcript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    }
+  },
+  "[javasrcriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    }
+  },
+  "[typesrcript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    }
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    }
+  },
+  
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    ".prettierrc": "json"
+  },   
+  
+  
+  "window.zoomLevel": 0,
+  
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "nunjucks": "html"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "nunjucks": "html"
+  },
+  
+
+  "gitlens.codeLens.recentChange.enabled": true,
+  "gitlens.codeLens.authors.enabled": true,
+  "gitlens.codeLens.enabled": true,
+  
+  "git.enableSmartCommit": true,
+  
+  "liveshare.featureSet": "insiders",    
+  
+
+  "typescript.tsserver.log": "verbose",
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  
+  "editor.renderWhitespace": "selection",
+  "files.autoSave": "off",
+  "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "yarn",
+
+  "material-icon-theme.folders.associations": {
+    "infra": "app",
+    "entities": "class",
+    "schemas": "class",
+    "typeorm": "database",
+    "repositories": "mappings",
+    "http": "container",
+    "migrations": "tools",
+    "modules":"components",
+    "implementations": "core",
+    "dtos": "typescript",
+    "fakes": "mock",
+    "useCases": "controller",
+    "providers": "include"
+  },
+
+  "material-icon-theme.files.associations": {
+    "ormconfig.json": "database",
+    "tsconfig.json": "tune"
+  },
+  "editor.fontSize": 18,  
+  "editor.semanticHighlighting.enabled": true,
+  "editor.largeFileOptimizations": false,
+  
+}
